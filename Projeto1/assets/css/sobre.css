@@ -1,0 +1,140 @@
+/*layout geral*/
+.titulo{
+    grid-area: titulo;
+}
+.mapa{
+    grid-area: mapa;
+}
+.subtitulo{
+    grid-area: subtitulo;
+}
+.video-incorporado{
+    grid-area: video-incorporado;
+}
+.subtitulo2{
+    grid-area: subtitulo2;
+}
+.video{
+    grid-area: video;
+}
+.lista{
+    grid-area: lista;
+}
+
+.main{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 85vh 85vh 85vh 85vh 85vh 85vh 60vh;
+    grid-template-areas: 
+        'titulo'
+        'mapa'
+        'subtitulo'
+        'video-incorporado'
+        'subtitulo2'
+        'video'
+        'lista';
+}
+
+/*titulo*/
+.titulo, .subtitulo, .subtitulo2, .subtitulo3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding-right: 10vw;
+    padding-left: 10vw;
+}
+
+/*tamanhos conteudos*/
+.mapa, .video-incorporado, .video{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color:#2F0559;
+
+}
+
+.img, .conteudo{
+    width: 50vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img img, .conteudo iframe, .conteudo video{
+    width: 80%;
+    height: 80%;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    width: 100vw;
+}
+
+.lista ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10vw;
+    padding-left: 10vw;
+}
+
+.lista p{
+    padding-right: 10vw;
+    padding-left: 10vw;
+}
+
+.lista h2{
+    color:deeppink ;
+}
+
+
+/*responsividade*/
+@media (max-width: 600px){
+    .conteudo{
+        width: 100vw;
+        padding: 5px;
+    }
+    .mapa, .video-incorporado, .video{
+        width: 100%;
+    }
+}
+  
+@media (max-width: 768px){
+    .img{
+        display:none;
+    }
+    .conteudo{
+        width: 95vw;
+    }
+}
+
+@media (max-width: 1366px){
+    /*flex já aplicado*/
+}
+
+@media (min-width: 1367px){
+    /*
+    notebooks e desktops
+    mantém o padrão
+    OBS: Há css grid, flexbox e valores relativos controlando as proporções
+    */
+}
+  
+  
+  
+
+
+
+

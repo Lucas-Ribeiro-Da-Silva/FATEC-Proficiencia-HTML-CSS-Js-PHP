@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link para os ícones do font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--link para as fontes do google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Shantell+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <!--CSS externo-->
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/contatos.css">
+    <!--[if lt IE 9] :compatibilidade de navegadores>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
+    <title>Contatos</title>
+</head>
+<body class="body">
+    <div class="box">
+        <header class="header">
+            <div class="logo">PROGRAMADORES ANÔNIMOS</div>
+            <i class="fa-solid fa-bars burguer" onclick="clickMenu()"></i>
+            <nav id="nav" class="nav">
+                <ul class="ul">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./contatos.html">Contatos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container-absoluto">
+            <div class="container-relativo">
+                <main class="main">
+                    <div class="titulo">
+                        <h1 class="h1">Contate a <span class="roxo"> instituição</span></h1>
+                    </div>
+                    <div class="img">
+                        <img src="./assets/img/forms.jpg" alt="">
+                    </div>
+                    <div class="formulario">
+                        <form class="form" id="clientes" name="clientes" method="post" action="script1.php" target="_blank">
+                            <legend>Formulário de contato</legend>
+                            <label for="user">Nome:</label>
+                            <input type="text" id="user" name="user" placeholder="Seu Nome" />
+                            <br>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Seu E-mail" />
+                            <br>
+                            <label for="comentario">Comentario:</label>
+                            <textarea id="comentario" name="comentario" rows="4" placeholder="Deixe seus comentários…"></textarea>
+                            <br>
+                            <input class="style-button" type="submit" value="Enviar"/> 
+                        </form>
+                    </div>
+                </main>
+                <footer class="footer">
+                    <div class="lucas">
+                        <p>Lucas Ribeiro da Silva - RM:22109821</p>
+                        <div class="linkedin-icon">
+                            <a href="#">
+                                <i class="fa-brands fa-linkedin"></i> 
+                            </a>
+                            <a href="">Linkedin</a>
+                        </div>
+                        <div class="github-icon">
+                            <a href="#" >
+                                <i class="fa-brands fa-github-square"></i>
+                            </a>
+                            <a href="">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="caio">
+                        <p>Caio Vitor Urbano Neves - RM:xxxxxxxx</p>
+                        <div class="linkedin-icon">
+                            <a href="#">
+                                <i class="fa-brands fa-linkedin"></i> 
+                            </a>
+                            <a href="">Linkedin</a>
+                        </div>
+                        <div class="github-icon">
+                            <a href="#" >
+                                <i class="fa-brands fa-github-square"></i>
+                            </a>
+                            <a href="">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="copy">
+                        <p>&copy; Todos os direitos resevados</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Seleciona o elemento do menu de navegação
+        const nav = document.querySelector('#nav');
+
+        // Define a função para exibir ou ocultar o menu
+        function clickMenu(){
+            if (window.innerWidth < 600) {
+                if (nav.style.display == 'flex') {
+                    nav.style.display = 'none'
+                } else {
+                    nav.style.display = 'flex'
+                }
+            }
+        }
+        // Define a função para verificar a largura da tela
+        function checkWindowSize() {
+            // Verifica se a largura da tela é menor que 600 pixels
+            if (window.innerWidth < 600) {
+            nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+            }
+        }
+        // Executa a função para verificar a largura da tela quando a página carrega
+        checkWindowSize();
+        // Adiciona o evento resize ao objeto window
+        window.addEventListener('resize', function() {
+        // Executa a função para verificar a largura da tela sempre que a janela for redimensionada
+        checkWindowSize();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+/*normalize*/
+h2{
+    color: deeppink;
+}
+
+/*colunas*/
+.main{
+    grid-area: main;
+}
+.aside{
+    grid-area: aside;
+}
+.colunas{
+    display: grid;
+    grid-template-columns: 80vw 20vw;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        'main aside';
+}
+/*aside*/
+.aside{
+    background-color: #200024;
+    height: auto;
+    position: fixed;
+    top: 5vh;
+    right: 0;
+    width: 20vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.aside ul li a img{
+    width: 15vw;
+    height: 15vh;
+}
+.aside ul{ 
+    list-style: none;
+}
+.aside ul li p{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.aside ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*main*/
+.titulo{
+    grid-area: titulo;
+}
+.iframe{
+    grid-area: iframe;
+}
+.paragrafo{
+    grid-area: paragrafo;
+}
+.depoimentos{
+    grid-area: depoimentos;
+}
+.main{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px calc(85vh - 50px) 85vh 1fr;
+    grid-template-areas: 
+        'titulo'
+        'iframe'
+        'paragrafo'
+        'depoimentos';
+}
+
+/*iframe*/
+.iframe div h2, .links{
+    background-color: #2d0432;
+}
+.iframe{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.iframe div iframe{
+    width: 55vw;
+    height: 60vh;
+}
+.iframe a img{
+    width: 10vw;
+    height: 13vh;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.iframe .img{
+    width: 100%;
+    transform: scale(2);
+}
+
+/*páragrafo*/
+.paragrafo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 70vw;
+    margin: 50px;
+}
+p{
+    text-align: justify;
+}
+
+/*depoimentos*/
+.titulo-dep{
+    grid-area: titulo-dep;
+}
+
+.subtitulo1{
+    grid-area: subtitulo1;
+}
+.subtitulo2{
+    grid-area: subtitulo2;
+}
+.subtitulo3{
+    grid-area: subtitulo3;
+}
+.subtitulo4{
+    grid-area: subtitulo4;
+}
+.video1{
+    grid-area: video1;
+}
+.video2{
+    grid-area: video2;
+}
+.audio1{
+    grid-area: audio1;
+}
+.audio2{
+    grid-area: audio2;
+}
+.figure1{
+    grid-area: figure1;
+}
+.figure2{
+    grid-area: figure2;
+}
+.depoimentos{
+    display: grid;
+    grid-template-columns: 35vw 35vw;
+    grid-template-rows: 50px 50px 3fr 50px 1fr 3fr;
+    grid-template-areas: 
+        'titulo-dep titulo-dep'
+        'subtitulo1 subtitulo2'
+        'video1 video2'
+        'subtitulo3 subtitulo4'
+        'audio1 audio2'
+        'figure1 figure2';
+    gap: 10px;
+    text-align: center;
+    margin: 50px;
+}
+
+
+.video1, .video2, .figure1, .figure2{
+    width: 30vw;
+    height: 40vh;
+    background-color: #200024;
+}
+
+.video1 img{
+    width: 30vw;
+    height: 40vh;
+}
+
+.subtitulo1, .subtitulo2, .subtitulo3, .subtitulo4, .audio1, .audio2{
+    width: 30vw;
+}
+
+.figure1 img, .figure2 img{
+    width: 100%;
+    height: 100%;
+}
+
+/*footer*/
+.footer{
+    z-index: 30;
+}
+
+/*responsividade*/
+@media (max-width: 600px){
+    .iframe{
+        flex-direction: column;
+    }
+    .links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 80vw;
+    }
+    .iframe a img{
+        width: 20vw;
+        height: 20vh;
+        padding-right: 40px;
+    }
+    .titulo{
+        font-size: 0.9rem;
+    }
+    .depoimentos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .video1, .video2, .figure1, .figure2, .video1 img{
+        width: 100vw;
+    }
+    .subtitulo1, .subtitulo2, .subtitulo3, .subtitulo4, .audio1, .audio2{
+        width: 10vw;
+    }
+}
+   
+ @media (max-width: 768px){
+     .aside{
+        display: none;
+     }
+     .main{
+        padding-right: 0;
+        width: 100vw;
+        grid-template-rows: 100px calc(85vh - 100px) 85vh 1fr;
+     }
+     .iframe div iframe{
+        width: 80vw;
+        height: 60vh;
+    }
+    .iframe a img{
+        width: 10vw;
+        height: 13vh;
+    }
+    .paragrafo{
+        width: 90vw;
+        padding-right: 60px;
+        margin: 20px;
+
+    }
+    .depoimentos{
+        grid-template-columns: 45vw 45vw;
+    }
+    
+    .video1, .video2, .figure1, .figure2, .video1 img{
+        width: 49vw;
+        height: 40vh;
+        background-color: #200024;
+    }
+    .subtitulo1, .subtitulo2, .subtitulo3, .subtitulo4, .audio1, .audio2{
+        width: 49vw;
+    }
+ }
+ 
+ @media (max-width: 1366px){
+     /*flex já aplicado*/
+ }
+ 
+ @media (min-width: 1367px){
+     /*
+     notebooks e desktops
+     mantém o padrão
+     OBS: Há css grid, flexbox e valores relativos controlando as proporções
+     */
+ }

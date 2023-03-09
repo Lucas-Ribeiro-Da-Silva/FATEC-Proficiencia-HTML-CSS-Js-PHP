@@ -1,0 +1,114 @@
+/*layout do main*/
+.titulo{
+    grid-area: titulo;
+}
+.img{
+    grid-area: img;
+}
+.formulario{
+    grid-area: formulario;
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: 
+        'titulo titulo'
+        'img formulario';
+    margin: 0;
+    padding: 5px;
+}
+
+/*layout do forms*/
+.formulario{
+    background-color: #700473;
+    height: calc(65vh - 80px );
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+}
+.img img{
+    height: calc(65vh - 50px );
+    width: 40vw;
+}
+.form input, .form textarea{
+    width: 90%;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+} 
+.form textarea{
+    height: 10vh;
+}
+.form .style-button{
+    background-color: rgba(0, 0, 0, 0.543);
+    width: 30%;
+    color: deeppink;
+    font-weight: bold;
+    font-family: 'Tilt Prism', cursive;
+    font-size: 1.4rem;
+    border: 1px solid  #700473;
+    height: 6vh;
+}
+
+label{
+    align-self: flex-start;
+    text-indent: 30px;
+}
+
+/*responsividade*/
+@media (max-width: 600px){
+   .main{
+        margin: 0;
+   }
+   .form{
+        width: 100vw;
+   }
+   label{
+    align-self: center;
+}
+}
+  
+@media (max-width: 960px){
+    .main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas: 
+            'titulo'
+            'formulario';
+        margin: 0;
+        padding: 5px;
+        margin: 10px;
+    }
+    .img{
+        display: none;
+    }
+    .form{
+        width: 90vw;
+    }
+}
+
+@media (max-width: 1366px){
+    /*flex já aplicado*/
+}
+
+@media (min-width: 1367px){
+    /*
+    notebooks e desktops
+    mantém o padrão
+    OBS: Há css grid, flexbox e valores relativos controlando as proporções
+    */
+}
+  
+  
+  
