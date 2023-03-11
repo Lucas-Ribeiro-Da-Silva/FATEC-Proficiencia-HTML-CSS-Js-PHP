@@ -1,0 +1,70 @@
+#ano{
+    grid-area: ano;
+}
+#mes{
+    grid-area: mes;
+}
+#dia{
+    grid-area: dia;
+}
+#horas{
+    grid-area: horas;
+}
+#minutos{
+    grid-area: minutos;
+}
+#segundos{
+    grid-area: segundos;
+}
+.paragrafo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        'ano mes dia horas minutos segundos';
+    height: auto;
+    width: 80vw;
+    background: rgba(128, 0, 128, 0.651);
+    border-radius: 3px;
+    box-shadow: 0 5px 10px 8px rgba(255, 20, 145, 0.71);
+}
+
+.paragrafo div{
+    height: 20vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+    color: #fff;
+    background-color: rgba(5, 5, 5, 0.9);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .7);
+    border: 7px;
+    letter-spacing: 3px;
+    margin: 10%;
+}
+
+.paragrafo span{
+    font-weight: bold;
+    font-size: 2em;
+    gap: 30px;
+}
+
+.paragrafo span.tempo{
+    font-size: 1rem;
+}
+@media(max-width: 600px){
+    .paragrafo{
+        width: 100vw;
+    }
+}
+@media (max-width: 960px){
+    .paragrafo{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            'ano mes dia'
+            'horas minutos segundos';
+    }
+}

@@ -1,0 +1,334 @@
+/*normalize*/
+*{
+    /* 
+    Fontes importadas:
+        usar em textos comums:
+            font-family: 'Shantell Sans', cursive;
+        usar em titulos:
+            font-family: 'Tilt Prism', cursive;
+        logo:
+            font-family: 'Rampart One', cursive;
+    */
+    font-family: 'Shantell Sans', cursive;
+    color: floralwhite;
+    padding: 0;
+    margin: 0;
+}
+
+/*box: background-image com opacity*/
+.body{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/home.jpeg');
+    background-size: cover;
+  }
+
+/*layout do header*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    background-color: #200024;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+    /*detalhes do logo*/
+    .logo{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;/*horizontal*/
+        align-items: center;/*vertical*/
+        padding: 30px;
+        font-size: 1.8rem;
+        font-weight:600;
+        text-align: center;
+        font-family: 'Rampart One', cursive;
+        flex: 1.5;
+    }
+    /*detalhes do nav*/
+    .nav{
+        display: flex;
+        justify-content: center;/*horizontal*/
+        align-items: center;/*vertical*/
+        flex: 1.5;
+    }
+    .ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        list-style: none;
+        
+    }
+    .ul li a{
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+        font-family: 'Tilt Prism', cursive;
+        text-decoration: none;
+        color: #cc00cc;
+        padding: 20px;
+    }
+
+    .ul li a:hover{
+        color: white;
+    }
+
+/*posicionando container abaixo do header*/
+.container-absoluto{
+    position: absolute;
+    top: 15vh;
+    left: 0;
+}
+.container-relativo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap:nowrap;
+    text-align: center;
+    flex-grow: 1;
+    min-height: 85vh;
+    position: relative;
+    overflow-y: auto;
+    width: 100vw;
+}
+.main{
+    padding-bottom: 50px;
+}
+
+/*titulo 1*/
+.h1{
+    font-family: 'Tilt Prism', cursive;
+    color:deeppink;
+}
+.roxo{
+    color: #a222b3;
+}
+/*paragrafp*/
+.p{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10vw 5px 10vw;
+    font-size: 1.1rem;
+    color:floralwhite;
+}
+/*layout dos botões*/
+.style-button{
+    width: 200px;
+    height: 50px;
+    border: 3px solid blueviolet;
+    border-radius: 10%;
+    background-color: rgba(128,0,128,0.2);   
+}
+
+.style-button a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing:2px;
+    color: deeppink;
+
+}
+.style-button a:hover{
+    color: blueviolet;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    gap: 20px;
+    margin: 30px;
+}
+
+/*footer*/
+.lucas{
+    grid-area: lucas;
+}
+.caio{
+    grid-area: caio;
+}
+.copy{
+    grid-area: copy;
+}
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        'lucas caio'
+        'copy copy';
+    width: 100vw;
+    height: 110px;
+    background-color: #200024;
+}
+
+.lucas, .caio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.lucas div a, .caio div a{
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+.lucas div a:hover, .caio div a:hover{
+    color: #a222b3;
+}
+
+.lucas div a i, .caio div a i{
+    color: #a222b3;
+    font-size: 1.6rem;
+}
+.copy{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*animação*/
+@keyframes conteudoAparece {
+    to{
+        transform: translateX(0);
+    }
+    from{
+        transform: translateX(-100%);
+    }
+}
+
+.main{
+    animation: conteudoAparece 2s ease-in-out forwards;
+}
+
+/*escondendo o burguer*/
+i.burguer{
+    display: none;
+}
+
+/*responsividade*/
+@media (max-width: 600px){
+    /*Móvel*/
+    .nav{
+        display: none;
+    }
+    i.burguer{
+        display: block;
+        background-color: gray;
+        text-align: center;
+        padding: 10px;
+        color: white;
+        margin: 30px;
+    }
+    /*detalhes do nav*/
+    .ul{
+        display: flex;
+        flex-direction: column;
+        padding: 5px;        
+        background-color:#921092;
+        width: 90vw;
+    }
+    .ul li{
+        border-bottom: 1px solid violet;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ul li a{
+        color:floralwhite;
+    }
+    .p{
+        padding: 10px;
+    }
+    /*layout do footer*/
+    .footer{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            'lucas'
+            'caio'
+            'copy';
+        height: 300px;
+    }
+    .lucas, .caio, .copy{
+        flex-direction: column;
+        background-color: #200024;
+    }
+}
+  
+@media (max-width: 768px){
+    /*Tablets*/ 
+    /*layout do footer*/
+    .footer{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            'lucas'
+            'caio'
+            'copy';
+        height: 300px;
+    }
+    .lucas, .caio, .copy{
+        flex-direction: column;
+        background-color: #200024;
+    }
+}
+
+@media (max-width: 1366px){
+    /*netbooks*/
+    /*layout do header*/
+    .header{
+        padding: 0 0 5px 0; 
+    }
+        /*detalhes do logo*/
+        .logo{
+            padding: 0;
+            font-size: 1.4rem;
+        }
+        /*detalhes do nav*/
+        .ul li a{
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+
+    /*layout do footer*/
+    .footer{
+        height: 150px;
+    }
+    .lucas, .caio, .copy{
+        flex-direction: column;
+        background-color: #200024;
+    }
+}
+
+@media (min-width: 1367px){
+    /*
+    notebooks e desktops
+    mantém o padrão
+    OBS: Há css grid, flexbox e valores relativos controlando as proporções
+    */
+}
+  
+  
+  
+
+
+
+
